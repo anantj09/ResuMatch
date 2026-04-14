@@ -336,14 +336,14 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Load sample data shortcut (must run BEFORE widgets are instantiated)
-with st.expander("🧪 Try with sample data"):
-    if st.button("Load sample resume & JD"):
-        with open("data/samples/sample_resume.txt") as f:
-            st.session_state["_resume_val"] = f.read()
-        with open("data/samples/sample_jd.txt") as f:
-            st.session_state["_jd_val"] = f.read()
-        st.rerun()
+# # Load sample data shortcut (must run BEFORE widgets are instantiated)
+# with st.expander("🧪 Try with sample data"):
+#     if st.button("Load sample resume & JD"):
+#         with open("data/samples/sample_resume.txt") as f:
+#             st.session_state["_resume_val"] = f.read()
+#         with open("data/samples/sample_jd.txt") as f:
+#             st.session_state["_jd_val"] = f.read()
+#         st.rerun()
 
 # Input Section
 col_name, col_clr = st.columns([2, 1])
