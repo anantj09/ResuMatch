@@ -1,0 +1,34 @@
+Job Title: NLP / Machine Learning Engineer (New Grad)
+Company: TechCorp AI
+Location: Bangalore, India (Hybrid)
+
+About the Role:
+We are looking for a passionate NLP Engineer to join our AI team. You will work on building and deploying production NLP systems, including text classification, information extraction, and semantic search pipelines.
+
+SKILLS REQUIRED
+- Proficiency in Python (mandatory)
+- Strong understanding of NLP concepts: tokenization, embeddings, transformers
+- Experience with Hugging Face Transformers, BERT, or similar pre-trained models
+- Hands-on with PyTorch or TensorFlow
+- Knowledge of scikit-learn, spaCy, or NLTK
+- Familiarity with REST APIs (FastAPI or Flask)
+- Version control with Git
+- Experience with Docker and cloud deployment (AWS or GCP preferred)
+
+EXPERIENCE / RESPONSIBILITIES
+- Design and implement NLP pipelines for text classification and entity extraction
+- Fine-tune pre-trained language models (BERT, RoBERTa, DistilBERT) on domain-specific data
+- Build and maintain model serving infrastructure
+- Collaborate with data engineers on data preprocessing and feature engineering
+- Write clean, testable, production-quality code
+- Conduct experiments, track metrics, and maintain documentation
+
+EDUCATION
+- B.Tech / B.E. / M.Tech in Computer Science, Data Science, or related field
+- Strong academic background in machine learning or NLP preferred
+- Research publications or open-source contributions are a plus
+
+NICE TO HAVE
+- Experience with semantic search (FAISS, Elasticsearch)
+- Knowledge of MLOps tools (MLflow, DVC)
+- Contributions to NLP open-source projects

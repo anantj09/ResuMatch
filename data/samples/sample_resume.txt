@@ -1,0 +1,39 @@
+John Doe
+john.doe@email.com | LinkedIn: linkedin.com/in/johndoe | GitHub: github.com/johndoe
+
+EDUCATION
+B.Tech in Computer Science and Engineering
+XYZ Institute of Technology, 2021 – 2025
+CGPA: 8.6 / 10
+
+SKILLS
+Programming Languages: Python, Java, C++, SQL
+Machine Learning: scikit-learn, TensorFlow, PyTorch, Hugging Face Transformers
+NLP: spaCy, NLTK, Sentence-Transformers, BERT fine-tuning
+Data: Pandas, NumPy, Matplotlib, Seaborn
+Tools: Git, Docker, Linux, Jupyter, VS Code
+Cloud: AWS (EC2, S3), Google Colab
+
+EXPERIENCE
+Machine Learning Intern — ABC Analytics Pvt. Ltd.  (May 2024 – Aug 2024)
+- Built a text classification pipeline using DistilBERT achieving 91% accuracy on internal ticket data.
+- Preprocessed 50k+ customer reviews using spaCy and performed sentiment analysis.
+- Deployed model as a REST API using FastAPI and Docker on AWS EC2.
+
+Research Intern — NLP Lab, XYZ Institute  (Jan 2024 – Apr 2024)
+- Implemented named entity recognition (NER) models using spaCy and compared against BERT-based approaches.
+- Contributed to a paper on low-resource language models submitted to ACL 2024.
+
+PROJECTS
+Resume Keyword Extractor  |  Python, KeyBERT, Streamlit
+- Built a tool to extract key skills from resumes and match them to job descriptions using cosine similarity.
+
+Fake News Detection  |  Python, scikit-learn, TF-IDF, Logistic Regression
+- Achieved 87% F1 score on LIAR dataset using classical ML pipeline with feature engineering.
+
+Chatbot for College FAQ  |  Python, Rasa, spaCy
+- Deployed an intent classification chatbot handling 200+ daily queries for campus portal.
+
+ACHIEVEMENTS
+- Ranked top 5% in Kaggle NLP competition (15k participants).
+- Published a blog on Medium about BERT fine-tuning (2k+ reads).
