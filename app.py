@@ -1,7 +1,7 @@
 """
 app.py
 ------
-Resume ↔ Job Description Matcher — Streamlit App
+Resume & Job Description Matcher — Streamlit App
 Run: streamlit run app.py
 """
 
@@ -33,7 +33,7 @@ def run_analysis(resume_text: str, jd_text: str) -> dict:
     print(f"[2] score() done in {time.time()-t0:.2f}s")
     return result
 
-# ── Page config ────────────────────────────────────────────────────────────
+# Page config
 st.set_page_config(
     page_title="ResuMatch · NLP Resume Matcher",
     page_icon="📄",
@@ -44,7 +44,7 @@ st.set_page_config(
 if "history" not in st.session_state:
     st.session_state["history"] = []
 
-# ── Custom CSS ──────────────────────────────────────────────────────────────
+# Custom CSS
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
@@ -189,7 +189,7 @@ div[data-testid="stFileUploader"] {
 """, unsafe_allow_html=True)
 
 
-# ── Helpers ─────────────────────────────────────────────────────────────────
+# Helpers
 
 def verdict(score: float) -> tuple[str, str]:
     if score >= 75:
@@ -326,7 +326,7 @@ def history_bar_chart(history):
     )
     return fig
 
-# ── Header ──────────────────────────────────────────────────────────────────
+# Header
 st.markdown("""
 <div style="padding: 2rem 0 1rem;">
     <div class="hero-title">📄 ResuMatch</div>
@@ -336,7 +336,7 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Load sample data shortcut (must run BEFORE widgets are instantiated) ────
+# Load sample data shortcut (must run BEFORE widgets are instantiated)
 with st.expander("🧪 Try with sample data"):
     if st.button("Load sample resume & JD"):
         with open("data/samples/sample_resume.txt") as f:
@@ -345,7 +345,7 @@ with st.expander("🧪 Try with sample data"):
             st.session_state["_jd_val"] = f.read()
         st.rerun()
 
-# ── Input Section ────────────────────────────────────────────────────────────
+# Input Section
 col_name, col_clr = st.columns([2, 1])
 with col_name:
     resume_label = st.text_input("📌 Label this resume (for history)", value="Resume 1", key="resume_label")
@@ -390,7 +390,7 @@ col_btn, _ = st.columns([1, 3])
 with col_btn:
     analyze_btn = st.button("⚡ Analyze Match", use_container_width=True)
 
-# ── Analysis ─────────────────────────────────────────────────────────────────
+# Analysis
 if analyze_btn:
     # Resolve text sources
     resume_text = ""
@@ -430,7 +430,7 @@ if analyze_btn:
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
     st.markdown("## 📊 Match Results")
 
-    # ── Row 1: Score + Gauge + Section bars ──────────────────────────────
+    # Row 1: Score + Gauge + Section bars
     c1, c2, c3 = st.columns([1.2, 1.5, 1.5], gap="large")
 
     overall = result["overall_score"]
@@ -467,7 +467,7 @@ if analyze_btn:
         else:
             st.info("Section headers not detected — using full-text mode.")
 
-    # ── Row 2: Keyword gap ────────────────────────────────────────────────
+    # Row 2: Keyword gap
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
     st.markdown("## 🔑 Keyword Gap Analysis")
 
@@ -496,7 +496,7 @@ if analyze_btn:
         st.markdown("<br>**➕ Extra Skills in Resume** *(not in JD but noteworthy)*", unsafe_allow_html=True)
         st.markdown(chips_html(gap["extra"][:10], "kw-extra"), unsafe_allow_html=True)
 
-    # ── Row 3: Section text preview ───────────────────────────────────────
+    # Row 3: Section text preview
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
     st.markdown("## 🔎 Section Breakdown")
 
@@ -517,7 +517,7 @@ if analyze_btn:
                 st.markdown("**Job Description**")
                 st.text(jd_sec[:800] + ("…" if len(jd_sec) > 800 else "") if jd_sec else "Not found")
 
-    # ── Footer ────────────────────────────────────────────────────────────
+    # Footer
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)
     st.markdown("""
     <div style="text-align:center; color:#9ca3af; font-size:0.82rem; padding-bottom:2rem;">
@@ -525,7 +525,7 @@ if analyze_btn:
     </div>
     """, unsafe_allow_html=True)
 
-# ── History panel ────────────────────────────────────────────────────────────
+# History panel
 history = st.session_state["history"]
 if history:
     st.markdown("<hr class='divider'>", unsafe_allow_html=True)

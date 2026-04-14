@@ -5,13 +5,12 @@ Semantic similarity scoring between resume and job description
 using Sentence-BERT (all-MiniLM-L6-v2).
 
 Optimizations:
-  - Model loaded once via st.cache_resource (survives reruns)
-  - All section texts batched into a single model.encode() call
-  - encode() uses show_progress_bar=False to avoid stdout noise
+    - Model loaded once via st.cache_resource (survives reruns)
+    - All section texts batched into a single model.encode() call
+    - encode() uses show_progress_bar=False to avoid stdout noise
 """
 
 from sentence_transformers import SentenceTransformer, util
-
 
 _MODEL_NAME = "all-MiniLM-L6-v2"
 
@@ -40,11 +39,7 @@ def compute_similarity(model: SentenceTransformer, text_a: str, text_b: str) -> 
     return round(float(score), 4)
 
 
-def compute_section_similarities(
-    model: SentenceTransformer,
-    resume_sections: dict[str, str],
-    jd_sections: dict[str, str],
-) -> dict[str, float]:
+def compute_section_similarities(model: SentenceTransformer, resume_sections: dict[str, str], jd_sections: dict[str, str]) -> dict[str, float]:
     """
     Compute similarity scores for all sections in ONE batched encode call
     instead of 3-4 separate calls.
